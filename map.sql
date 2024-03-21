@@ -1,0 +1,7 @@
+CREATE TABLE `map` (
+  `MapID` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) NOT NULL,
+  `ImageUrl` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`MapID`),
+  UNIQUE KEY `MapID_UNIQUE` (`MapID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

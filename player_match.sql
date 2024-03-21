@@ -1,0 +1,20 @@
+CREATE TABLE `player_match` (
+  `PlayerID` int NOT NULL,
+  `MatchID` int NOT NULL,
+  `AgentID` int DEFAULT NULL,
+  `Score` int DEFAULT NULL,
+  `Kills` int DEFAULT NULL,
+  `Deaths` int DEFAULT NULL,
+  `Assists` int DEFAULT NULL,
+  `Dealt` int DEFAULT NULL,
+  `Received` int DEFAULT NULL,
+  `BodyShots` int DEFAULT NULL,
+  `LegShots` int DEFAULT NULL,
+  `HeadShots` int DEFAULT NULL,
+  PRIMARY KEY (`PlayerID`,`MatchID`),
+  KEY `MatchID_idx` (`MatchID`),
+  KEY `AgentID_idx` (`AgentID`),
+  CONSTRAINT `AgentID` FOREIGN KEY (`AgentID`) REFERENCES `agent` (`AgentID`),
+  CONSTRAINT `MatchID` FOREIGN KEY (`MatchID`) REFERENCES `match` (`MatchID`),
+  CONSTRAINT `PlayerID` FOREIGN KEY (`PlayerID`) REFERENCES `player` (`PlayerID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
