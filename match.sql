@@ -9,6 +9,7 @@ CREATE TABLE `match` (
   `Date` datetime DEFAULT NULL,
   `Duration` timestamp NULL DEFAULT NULL,
   `Rounds` int DEFAULT NULL,
+  `VideoEmbedUrl` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`MatchID`),
   UNIQUE KEY `MatchID_UNIQUE` (`MatchID`),
   KEY `MapID_idx` (`MapID`),
